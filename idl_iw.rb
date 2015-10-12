@@ -8,18 +8,11 @@ require 'open3'
 
 idlbin = 'idl'
 
-Open3.popen3(idlbin) do |i, o, e, w|
+Open3.popen2e(idlbin) do |i, o, w|
 
-  # stdout
+  # stdout, stderr
   Thread.new do
     o.each do |line|
-      puts line
-    end
-  end
-
-  # stderr
-  Thread.new do
-    e.each do |line|
       puts line
     end
   end
