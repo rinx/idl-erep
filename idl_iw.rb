@@ -15,7 +15,7 @@ Open3.popen2e(idlbin) do |i, o, w|
   # stdout, stderr
   Thread.new do
     o.each do |line|
-      puts line
+      puts "\033[2K\r" + line
     end
   end
 
