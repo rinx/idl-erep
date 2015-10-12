@@ -12,14 +12,11 @@ prompt = 'IDL-EREP> '
 histfile = './.idl_history'
 
 def readline_hist_management(prompt)
-  line = Readline.readline(prompt, true)
+  line = Readline.readline(prompt, false)
+  Readline::HISTORY << line.gsub(/$/, '')
   return nil if line.nil?
   if line =~ /^\s*$/ then
     Readline::HISTORY.pop
-  end
-  if inx = Readline::HISTORY.to_a.index(line) then
-    Readline::HISTORY.delete_at(inx)
-    Readline::HISTORY.to_a
   end
   line
 end
@@ -27,14 +24,14 @@ end
 # main routine
 
 # initialize
-if not File.exist?(histfile) then
-  open(histfile, 'w').close()
-end
-
-open(histfile) do |f|
-  while l = f.gets
-    Readline::HISTORY << l
+if File.exist?(histfile) then
+  open(histfile) do |f|
+    while l = f.gets
+      Readline::HISTORY << l
+    end
   end
+else
+  open(histfile, 'w').close()
 end
 
 Open3.popen2e(idlbin) do |i, o, w|
