@@ -1,14 +1,14 @@
 #!/usr/bin/env ruby
 # -*- coding: utf-8 -*-
 
-# IDL interactive wrapper
-# idl_iw.rb
+# IDL enhanced REPL
+# idl_erep.rb
 
 require 'open3'
 require 'readline'
 
 idlbin = 'idl'
-prompt = 'IDL-IW> '
+prompt = 'IDL-EREP> '
 
 Open3.popen2e(idlbin) do |i, o, w|
 
