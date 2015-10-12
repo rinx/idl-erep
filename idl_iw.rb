@@ -6,18 +6,36 @@
 
 require 'open3'
 
-idlbin = "idl"
+idlbin = 'idl'
 
 Open3.popen3(idlbin) do |i, o, e, w|
-  i.write "print, test"
-  i.close
-  o.each do |line|
-    puts line
-  end
-  e.each do |line|
-    puts line
-  end
-  puts w.value
-end
 
+  # stdout
+  Thread.new do
+    o.each do |line|
+      puts line
+    end
+  end
+
+  # stderr
+  Thread.new do
+    e.each do |line|
+      puts line
+    end
+  end
+
+  # main loop
+  loop do
+    input = $stdin.gets
+    i.puts input
+
+    break if input =~ /^\s*exit/
+  end
+
+  i.close
+
+  # status
+  puts w.value
+
+end
 
