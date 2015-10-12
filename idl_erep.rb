@@ -13,7 +13,7 @@ histfile = './.idl_history'
 
 def readline_hist_management(prompt)
   line = Readline.readline(prompt, false)
-  Readline::HISTORY << line.gsub(/$/, '')
+  Readline::HISTORY << line.chomp
   return nil if line.nil?
   if line =~ /^\s*$/ then
     Readline::HISTORY.pop
@@ -27,7 +27,7 @@ end
 if File.exist?(histfile) then
   open(histfile) do |f|
     while l = f.gets
-      Readline::HISTORY << l
+      Readline::HISTORY << l.chomp
     end
   end
 else
