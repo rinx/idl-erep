@@ -1,7 +1,9 @@
 IDL-tools
 ===
+Useful codes for IDL (Interactive Data Language).
 
 * idl\_iw.rb
+* gen\_idl\_history.rb
 
 ### idl\_iw.rb
 This is the *IDL interactive wrapper*
