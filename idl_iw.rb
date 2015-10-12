@@ -5,8 +5,10 @@
 # idl_iw.rb
 
 require 'open3'
+require 'readline'
 
 idlbin = 'idl'
+prompt = 'IDL-IW> '
 
 Open3.popen2e(idlbin) do |i, o, w|
 
@@ -18,8 +20,8 @@ Open3.popen2e(idlbin) do |i, o, w|
   end
 
   # main loop
-  loop do
-    input = $stdin.gets
+  while l = Readline.readline(prompt, true)
+    input = l
     i.puts input
 
     break if input =~ /^\s*exit/

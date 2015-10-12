@@ -1,0 +1,10 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rb-readline (0.5.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  rb-readline
