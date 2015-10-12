@@ -27,6 +27,10 @@ end
 # main routine
 
 # initialize
+if not File.exist?(histfile) then
+  open(histfile, 'w').close()
+end
+
 open(histfile) do |f|
   while l = f.gets
     Readline::HISTORY << l
