@@ -9,7 +9,8 @@ require 'readline'
 
 idlbin = 'idl'
 prompt = 'IDL-EREP> '
-histfile = './.idl_history'
+homehist = '~/.idl_history'
+currhist = './.idl_history'
 
 def readline_hist_management(prompt)
   line = Readline.readline(prompt, false)
@@ -24,14 +25,23 @@ end
 # main routine
 
 # initialize
-if File.exist?(histfile) then
-  open(histfile) do |f|
+if File.exist?(File.expand_path(currhist)) then
+  open(File.expand_path(currhist)) do |f|
     while l = f.gets
       Readline::HISTORY << l.chomp
     end
   end
+  histfile = currhist
+elsif File.exist?(File.expand_path(homehist)) then
+  open(File.expand_path(homehist)) do |f|
+    while l = f.gets
+      Readline::HISTORY << l.chomp
+    end
+  end
+  histfile = homehist
 else
-  open(histfile, 'w').close()
+  open(File.expand_path(homehist), 'w').close()
+  histfile = homehist
 end
 
 Open3.popen2e(idlbin) do |i, o, w|
@@ -59,7 +69,7 @@ Open3.popen2e(idlbin) do |i, o, w|
 end
 
 # finalize
-open(histfile, 'w') do |f|
+open(File.expand_path(histfile), 'w') do |f|
   f.puts Readline::HISTORY.to_a
 end
 
