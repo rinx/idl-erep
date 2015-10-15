@@ -7,6 +7,8 @@
 require 'open3'
 require 'readline'
 
+require File.expand_path(File.join(File.dirname(__FILE__), "gen_idl_history"))
+
 idlbin = 'idl'
 prompt = 'IDL-EREP> '
 homehist = '~/.idl_history'
