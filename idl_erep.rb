@@ -61,7 +61,7 @@ Open3.popen2e(idlbin) do |i, o, w|
   while input = readline_hist_management(prompt)
     i.puts input
 
-    break if input =~ /^\s*exit/
+    break if input =~ /^\s*exit\s*$/
   end
 
   i.close
