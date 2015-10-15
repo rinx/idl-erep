@@ -7,7 +7,8 @@
 require 'open3'
 require 'readline'
 
-require File.expand_path(File.join(File.dirname(__FILE__), "gen_idl_history"))
+thisfile = File.symlink?(__FILE__) ? File.readlink(__FILE__) : __FILE__
+require File.expand_path(File.join(File.dirname(thisfile), "gen_idl_history"))
 
 idlbin = 'idl'
 prompt = 'IDL-EREP> '
