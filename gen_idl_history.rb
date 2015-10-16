@@ -10,9 +10,11 @@ end
 
 def read_hist_from_file(file)
   res = []
-  open(File.expand_path(file)) do |f|
-    while l = f.gets
-      res << extract_idl_command(l.chomp)
+  if File.exist?(File.expand_path(file)) then
+    open(File.expand_path(file)) do |f|
+      while l = f.gets
+        res << extract_idl_command(l.chomp)
+      end
     end
   end
   res.reverse
