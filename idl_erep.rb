@@ -13,8 +13,10 @@ require File.expand_path(File.join(File.dirname(thisfile), "gen_idl_history"))
 profile = '~/.idl_profile'
 idlbin = 'idl'
 prompt = 'IDL-EREP> '
+idlhist  = '~/.idl/idl/rbuf/history'
 homehist = '~/.idl_history'
 currhist = './.idl_history'
+histlim  = 10000
 
 def readline_hist_management(prompt)
   line = Readline.readline(prompt, false)
@@ -30,11 +32,15 @@ end
 
 if File.exist?(File.expand_path(profile)) then
   open(File.expand_path(profile)) do |f|
-
   end
 end
 
 # initialize
+
+read_hist_from_file(idlhist).map do |h|
+  Readline::HISTORY << h
+end
+
 if File.exist?(File.expand_path(currhist)) then
   open(File.expand_path(currhist)) do |f|
     while l = f.gets
