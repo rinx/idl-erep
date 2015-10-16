@@ -18,6 +18,10 @@ homehist = '~/.idl_history'
 currhist = './.idl_history'
 histlim  = 10000
 
+def parse_profile(line)
+  # eval ruby codes
+end
+
 def readline_hist_management(prompt)
   line = Readline.readline(prompt, false)
   Readline::HISTORY << line.chomp
@@ -32,6 +36,9 @@ end
 
 if File.exist?(File.expand_path(profile)) then
   open(File.expand_path(profile)) do |f|
+    while l = f.gets
+      parse_profile(l)
+    end
   end
 end
 
