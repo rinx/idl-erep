@@ -10,6 +10,7 @@ require 'readline'
 thisfile = File.symlink?(__FILE__) ? File.readlink(__FILE__) : __FILE__
 require File.expand_path(File.join(File.dirname(thisfile), "gen_idl_history"))
 
+profile = '~/.idl_profile'
 idlbin = 'idl'
 prompt = 'IDL-EREP> '
 homehist = '~/.idl_history'
@@ -26,6 +27,12 @@ def readline_hist_management(prompt)
 end
 
 # main routine
+
+if File.exist?(File.expand_path(profile)) then
+  open(File.expand_path(profile)) do |f|
+
+  end
+end
 
 # initialize
 if File.exist?(File.expand_path(currhist)) then
