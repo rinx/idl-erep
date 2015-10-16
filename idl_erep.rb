@@ -7,9 +7,6 @@
 require 'open3'
 require 'readline'
 
-thisfile = File.symlink?(__FILE__) ? File.readlink(__FILE__) : __FILE__
-require File.expand_path(File.join(File.dirname(thisfile), "gen_idl_history"))
-
 profile = '~/.idl_profile'
 idlbin = 'idl'
 prompt = 'IDL-EREP> '
@@ -20,6 +17,22 @@ histlim  = 10000
 
 def parse_profile(line)
   # eval ruby codes
+end
+
+def extract_idl_command(line)
+  line.gsub(/ <!--.*-->$/, '')
+end
+
+def read_hist_from_file(file)
+  res = []
+  if File.exist?(File.expand_path(file)) then
+    open(File.expand_path(file)) do |f|
+      while l = f.gets
+        res << extract_idl_command(l.chomp)
+      end
+    end
+  end
+  res.reverse
 end
 
 def readline_hist_management(prompt)
