@@ -99,7 +99,7 @@ end
 
 # finalize
 open(File.expand_path(histfile), 'w') do |f|
-  f.puts Readline::HISTORY.to_a
+  f.puts Readline::HISTORY.to_a.reverse.take(histlim).reverse
 end
 
 
