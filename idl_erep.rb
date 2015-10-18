@@ -15,10 +15,6 @@ homehist = '~/.idl_history'
 currhist = './.idl_history'
 histlim  = 10000
 
-def parse_profile(line)
-  # eval ruby codes
-end
-
 def extract_idl_command(line)
   line.gsub(/ <!--.*-->$/, '')
 end
@@ -47,15 +43,12 @@ end
 
 # main routine
 
-if File.exist?(File.expand_path(profile)) then
-  open(File.expand_path(profile)) do |f|
-    while l = f.gets
-      parse_profile(l)
-    end
-  end
-end
-
 # initialize
+
+# read profile
+if File.exist?(File.expand_path(profile)) then
+  eval File.read File.expand_path(profile)
+end
 
 read_hist_from_file(idlhist).map do |h|
   Readline::HISTORY << h
