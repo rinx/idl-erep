@@ -1,6 +1,6 @@
-IDL-tools
+IDL-EREP
 ===
-Useful codes for IDL (Interactive Data Language).
+Useful interactive environment for IDL (Interactive Data Language).
 
 * idl\_erep.rb
 
