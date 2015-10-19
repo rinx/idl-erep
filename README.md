@@ -9,7 +9,7 @@ This is the *IDL Enhanced REPl*
 which gives an enhanced interactive environment.
 
 
-install
+Installation
 ---
 
 `idl_erep.rb` requires to install rubygems.
@@ -19,7 +19,7 @@ install
 Then, you can execute `idl_erep.rb`.
 
 
-usage
+Usage
 ---
 
 Just execute `idl_erep.rb` like following:
@@ -31,5 +31,15 @@ or
     $ ./idl_erep.rb
 
 It is recommended to make symbolic link to this ruby script in your PATH.
+
+
+Key mappings
+---
+
+
+Configurations
+---
+
+`~/.idl_profile`
 
 
