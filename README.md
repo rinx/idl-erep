@@ -19,3 +19,17 @@ install
 Then, you can execute `idl_erep.rb`.
 
 
+usage
+---
+
+Just execute `idl_erep.rb` like following:
+
+    $ ruby idl_erep.rb
+
+or
+
+    $ ./idl_erep.rb
+
+It is recommended to make symbolic link to this ruby script in your PATH.
+
+
