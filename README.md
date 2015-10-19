@@ -9,3 +9,13 @@ This is the *IDL Enhanced REPl*
 which gives an enhanced interactive environment.
 
 
+install
+---
+
+`idl_erep.rb` requires to install rubygems.
+
+    $ bundle install
+
+Then, you can execute `idl_erep.rb`.
+
+
