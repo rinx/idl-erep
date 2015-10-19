@@ -12,9 +12,13 @@ which gives an enhanced interactive environment.
 Installation
 ---
 
-`idl_erep.rb` requires to install rubygems.
+`idl_erep.rb` requires to install `rb-readline` gem.
 
     $ bundle install
+
+or just execute
+
+    $ gem install rb-readline
 
 Then, you can execute `idl_erep.rb`.
 
