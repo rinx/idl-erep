@@ -44,6 +44,15 @@ Key mappings
 Configurations
 ---
 
-`~/.idl_profile`
+In `~/.idl_profile`, you can set some configurations of this environment.
+
+| variable   | default                   | description                                          |
+|:----------:|:-------------------------:|:----------------------------------------------------:|
+| `idlbin`   | 'idl'                     | PATH of IDL executable file                          |
+| `prompt`   | 'IDL-EREP> '              | prompt string of this environment                    |
+| `idlhist`  | '~/.idl/idl/rbuf/history' | PATH of default IDL history file (used only reading) |
+| `homehist` | '~/.idl\_history'         | PATH of IDL-EREP history file in home directory      |
+| `currhist` | './.idl\_history'         | PATH of IDL-EREP history file in current directory   |
+| `histlim`  | 10000                     | limit number of IDL-EREP history file elements       |
 
 
