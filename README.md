@@ -47,7 +47,7 @@ Configurations
 In `~/.idl_profile`, you can set some configurations of this environment.
 
 | variable   | default                   | description                                          |
-|:----------:|:-------------------------:|:----------------------------------------------------:|
+|:-----------|:--------------------------|:-----------------------------------------------------|
 | `idlbin`   | 'idl'                     | PATH of IDL executable file                          |
 | `prompt`   | 'IDL-EREP> '              | prompt string of this environment                    |
 | `idlhist`  | '~/.idl/idl/rbuf/history' | PATH of default IDL history file (used only reading) |
