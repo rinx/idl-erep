@@ -39,6 +39,22 @@ It is recommended to make symbolic link to this ruby script in your PATH.
 
 Key mappings
 ---
+Key mappings depends on `rb-readline`.
+
+| key      | description                                                                   |
+|:---------|:------------------------------------------------------------------------------|
+| Tab      | Auto-complete files and folder names                                          |
+| Ctrl + A | Go to the beginning of the line you are currently typing on                   |
+| Ctrl + E | Go to the end of the line you are currently typing on                         |
+| Ctrl + U | Clears the line before the cursor position. If you are at the end of the line, clears the entire line. |
+| Ctrl + H | Same as backspace                                                             |
+| Ctrl + R | Let's you search through previously used commands                             |
+| Ctrl + W | Delete the word before the cursor                                             |
+| Ctrl + K | Clear the line after the cursor                                               |
+| Ctrl + T | Swap the last two characters before the cursor                                |
+| Esc + T  | Swap the last two words before the cursor                                     |
+| Alt + F  | Move cursor forward one word on the current line                              |
+| Alt + B  | Move cursor backward one word on the current line                             |
 
 
 Configurations
