@@ -4,7 +4,7 @@ An enhanced interactive environment for IDL (Interactive Data Language).
 
 It provides stronger command history, tab-completion, and key shortcuts.
 
-### idl\_erep.rb
+### idl\_erep
 This is the *IDL Enhanced REPl*
 which gives an enhanced interactive environment.
 
@@ -12,29 +12,19 @@ which gives an enhanced interactive environment.
 Installation
 ---
 
-`idl_erep.rb` requires to install `rb-readline` gem.
+Just execute
 
-    $ bundle install
+    $ gem install idl_erep
 
-or just execute
-
-    $ gem install rb-readline
-
-Then, you can execute `idl_erep.rb`.
+Then, you can execute `idl_erep`.
 
 
 Usage
 ---
 
-Just execute `idl_erep.rb` like following:
+Just execute `idl_erep` like following:
 
-    $ ruby idl_erep.rb
-
-or
-
-    $ ./idl_erep.rb
-
-It is recommended to make symbolic link to this ruby script in your PATH.
+    $ idl\_erep
 
 
 Key mappings

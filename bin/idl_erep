@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # IDL enhanced REPL
-# idl_erep.rb
+# idl_erep
 
 require 'open3'
 require 'readline'
