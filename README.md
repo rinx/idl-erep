@@ -1,6 +1,8 @@
 IDL-EREP
 ===
-Useful interactive environment for IDL (Interactive Data Language).
+An enhanced interactive environment for IDL (Interactive Data Language).
+
+It provides stronger command history, tab-completion, and key shortcuts.
 
 * idl\_erep.rb
 
@@ -55,6 +57,16 @@ Key mappings depends on `rb-readline`.
 | Esc + T      | Swap the last two words before the cursor                                     |
 | Alt + F      | Move cursor forward one word on the current line                              |
 | Alt + B      | Move cursor backward one word on the current line                             |
+
+
+Command History
+---
+
+When start this program, if there's a `.idl_history` file in current directory,
+it will be loaded and `~/.idl_history` won't be loaded.
+If there's no `.idl_history`, `~/.idl_hisoty` will be loaded.
+
+It will allow you to keep command history only inside the project.
 
 
 Configurations
