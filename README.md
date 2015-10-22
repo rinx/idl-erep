@@ -24,7 +24,7 @@ Usage
 
 Just execute `idl_erep` like following:
 
-    $ idl\_erep
+    $ idl_erep
 
 
 Key mappings
