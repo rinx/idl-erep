@@ -4,8 +4,6 @@ An enhanced interactive environment for IDL (Interactive Data Language).
 
 It provides stronger command history, tab-completion, and key shortcuts.
 
-* idl\_erep.rb
-
 ### idl\_erep.rb
 This is the *IDL Enhanced REPl*
 which gives an enhanced interactive environment.
