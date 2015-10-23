@@ -1,5 +1,7 @@
 IDL-EREP
 ===
+[![Gem Version](https://badge.fury.io/rb/idl_erep.png)](http://badge.fury.io/rb/idl_erep)
+
 An enhanced interactive environment for IDL (Interactive Data Language).
 
 It provides stronger command history, tab-completion, and key shortcuts.
