@@ -14,6 +14,7 @@ idlhist  = '~/.idl/idl/rbuf/history'
 homehist = '~/.idl_history'
 currhist = './.idl_history'
 histlim  = 10000
+defcomplist = ['help,', 'plot,', 'print,', 'window,']
 
 def extract_idl_command(line)
   line.gsub(/ <!--.*-->$/, '')
@@ -40,6 +41,15 @@ def readline_hist_management(prompt)
   end
   line
 end
+
+comp = proc do |s|
+  complist = defcomplist
+  complist += Dir::entries(Dir::pwd)
+  complist.grep(/^#{Regexp.escape(s)}/)
+end
+
+Readline.completion_append_character = " "
+Readline.completion_proc = comp
 
 # main routine
 

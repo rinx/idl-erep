@@ -70,5 +70,6 @@ In `~/.idl_profile`, you can set some configurations of this environment.
 | `homehist` | '~/.idl\_history'         | PATH of IDL-EREP history file in home directory      |
 | `currhist` | './.idl\_history'         | PATH of IDL-EREP history file in current directory   |
 | `histlim`  | 10000                     | limit number of IDL-EREP history file elements       |
+| `defcomp`  | ['help,', 'plot,', etc..] | default completion list                              |
 
 
