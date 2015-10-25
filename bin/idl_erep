@@ -14,7 +14,22 @@ idlhist  = '~/.idl/idl/rbuf/history'
 homehist = '~/.idl_history'
 currhist = './.idl_history'
 histlim  = 10000
-defcomplist = ['help,', 'plot,', 'print,', 'window,']
+defcomplist = ['help', 'plot', 'print', 'window']
+compfuncs = ["defcomplist", "get_dir_elems", "get_dir_pros"]
+
+def get_dir_elems()
+  Dir::entries(Dir::pwd)
+end
+
+def get_dir_pros()
+  pros = Dir::entries(Dir::pwd).select do |i|
+    i =~ /\.pro$/
+  end
+  pros.map! do |i|
+    i.gsub(/\.pro$/, '')
+  end
+  pros
+end
 
 def extract_idl_command(line)
   line.gsub(/ <!--.*-->$/, '')
@@ -43,8 +58,10 @@ def readline_hist_management(prompt)
 end
 
 comp = proc do |s|
-  complist = defcomplist
-  complist += Dir::entries(Dir::pwd)
+  complist = []
+  compfuncs.map do |f|
+    complist += eval(f)
+  end
   complist.grep(/^#{Regexp.escape(s)}/)
 end
 
