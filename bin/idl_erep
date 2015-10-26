@@ -100,12 +100,20 @@ else
   histfile = homehist
 end
 
-Open3.popen2e(idlbin) do |i, o, w|
+Open3.popen3(idlbin) do |i, o, e, w|
 
-  # stdout, stderr
+  # stdout
   Thread.new do
     o.each do |line|
       puts "\033[2K\r" + line
+      print prompt
+    end
+  end
+
+  # stderr
+  Thread.new do
+    e.each do |line|
+      puts "\033[2K\r\033[31m" + line + "\033[0m"
       print prompt
     end
   end
