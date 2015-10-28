@@ -17,6 +17,8 @@ histlim  = 10000
 defcomplist = ['help', 'plot', 'print', 'window']
 compfuncs = ["defcomplist", "get_dir_elems", "get_dir_pros"]
 
+stderr_blink_ptrn = /^% Execution halted at.*$/
+
 def get_dir_elems()
   Dir::entries(Dir::pwd)
 end
@@ -113,7 +115,11 @@ Open3.popen3(idlbin) do |i, o, e, w|
   # stderr
   Thread.new do
     e.each do |line|
-      puts "\033[2K\r\033[31m" + line + "\033[0m"
+      if line =~ stderr_blink_ptrn then
+        print "\033[2K\r\033[31m\033[1m\033[6m" + line + "\033[0m"
+      else
+        print "\033[2K\r\033[31m" + line + "\033[0m"
+      end
       print prompt
     end
   end
