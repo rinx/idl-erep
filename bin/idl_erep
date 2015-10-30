@@ -110,7 +110,16 @@ Open3.popen3(idlbin) do |i, o, e, w|
   # stdout
   Thread.new do
     o.each do |line|
-      puts "\033[2K\r" + line
+      case line
+      when stdout_blue_ptrn
+        puts "\033[2K\r\033[4m" + line + "\033[0m"
+      when stdout_green_ptrn
+        puts "\033[2K\r\033[2m" + line + "\033[0m"
+      when stdout_yellow_ptrn
+        puts "\033[2K\r\033[3m" + line + "\033[0m"
+      else
+        puts "\033[2K\r" + line
+      end
       print prompt
     end
   end
