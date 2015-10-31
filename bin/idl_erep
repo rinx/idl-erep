@@ -17,10 +17,10 @@ histlim  = 10000
 defcomplist = ['help', 'plot', 'print', 'window']
 compfuncs = ["defcomplist", "get_dir_elems", "get_dir_pros"]
 
-stderr_blink_ptrn  = /^% Execution halted at.*$/
-stdout_blue_ptrn   = //
-stdout_green_ptrn  = //
-stdout_yellow_ptrn = //
+stderr_blink_ptrn  = /^% Execution halted at.*$|^%.*Incorrect number of arguments.$/
+stdout_blue_ptrn   = /INT/
+stdout_green_ptrn  = /FLOAT/
+stdout_yellow_ptrn = /ARRAY/
 
 def get_dir_elems()
   Dir::entries(Dir::pwd)
