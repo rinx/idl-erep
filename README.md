@@ -75,6 +75,16 @@ In `~/.idl_profile`, you can set some configurations of this environment.
 | `defcomplist`  | ['help', 'plot', etc..]   | default completion keywords list                     |
 | `compfuncs`    | ['defcomplist', etc...]   | completion functions                                 |
 
+There are some regex patterns for colorize stdout and stderr outputs.  
+If you want to customize these patterns, please see the source code.
+
+| variable             | description                 |
+|:---------------------|:----------------------------|
+| `stderr_blink_prtn`  | blink patterns for stderr   |
+| `stdout_blue_ptrn`   | blue patterns for stdout    |
+| `stdout_green_ptrn`  | green patterns for stdout   |
+| `stdout_yellow_ptrn` | yellow patterns for stdout` |
+
 
 About Completion Functions
 ---
