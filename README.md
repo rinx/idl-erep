@@ -83,7 +83,7 @@ If you want to customize these patterns, please see the source code.
 | `stderr_blink_prtn`  | blink patterns for stderr   |
 | `stdout_blue_ptrn`   | blue patterns for stdout    |
 | `stdout_green_ptrn`  | green patterns for stdout   |
-| `stdout_yellow_ptrn` | yellow patterns for stdout` |
+| `stdout_yellow_ptrn` | yellow patterns for stdout  |
 
 
 About Completion Functions
