@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "idl_erep"
-  spec.version       = "0.0.4"
+  spec.version       = "0.0.5"
   spec.authors       = ["Rintaro Okamura"]
   spec.email         = ["rintaro.okamura+github@gmail.com"]
   spec.summary       = %q{An enhanced interactive environment for IDL}

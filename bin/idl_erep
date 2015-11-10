@@ -18,9 +18,9 @@ defcomplist = ['help', 'plot', 'print', 'window']
 compfuncs = ["defcomplist", "get_dir_elems", "get_dir_pros"]
 
 stderr_blink_ptrn  = /^% Execution halted at.*$|^%.*Incorrect number of arguments.$/
-stdout_blue_ptrn   = /(INT|STRING)/
-stdout_green_ptrn  = /FLOAT/
-stdout_yellow_ptrn = /ARRAY/
+stdout_blue_ptrn   = /(UNDEFINED|BYTE|INT|LONG|STRING|UINT|ULONG|LONG64|ULONG64)/
+stdout_green_ptrn  = /(FLOAT|DOUBLE|COMPLEX|DCOMPLEX)/
+stdout_yellow_ptrn = /(ARRAY|POINTER|LIST|HASH|STRUCT|OBJREF|ANONYMOUS|DICTIONARY|ORDEREDHASH)/
 
 def get_dir_elems()
   Dir::entries(Dir::pwd)
