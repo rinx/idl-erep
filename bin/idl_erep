@@ -15,7 +15,7 @@ homehist = '~/.idl_history'
 currhist = './.idl_history'
 histlim  = 10000
 defcomplist = ['help', 'plot', 'print', 'window']
-compfuncs = ["defcomplist", "get_dir_elems", "get_dir_pros"]
+compfuncs = ["defcomplist", "get_dir_elems", "get_dir_pros", "get_hist_comp(10)"]
 
 stderr_blink_ptrn  = /^% Execution halted at.*$|^%.*Incorrect number of arguments.$/
 stdout_blue_ptrn   = /(UNDEFINED|BYTE|INT|LONG|STRING|UINT|ULONG|LONG64|ULONG64)/
@@ -34,6 +34,10 @@ def get_dir_pros()
     i.gsub(/\.pro$/, '')
   end
   pros
+end
+
+def get_hist_comp(lim)
+  Readline::HISTORY.to_a.reverse.take(lim).reverse
 end
 
 def extract_idl_command(line)
